@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+    <h1>History</h1>
+    <table class = "table table-striped" style = "width: 50vw; margin: 0 auto;">
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Name</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for t in transactions %}
+                <tr>
+                    <td>{{t["symbol"]}}</td>
+                    <td>{{t["name"]}}</td>
+                    <td>{{t["shares"]}}</td>
+                    <td>{{t["price"]}}</td>
+                    <td>{{t["date"]}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

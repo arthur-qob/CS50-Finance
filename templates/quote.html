@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+    <h1>Quote</h1>
+    <form action = "/quote" method = "POST">
+        <div class = "mb-3">
+            <input autocomplete = "off" autofocus class = "form-control mx-auto w-auto" name = "symbol" placeholder = "Symbol" type = "text">
+        </div>
+        <div class = "mb-3">
+            <button class = "btn btn-primary" type = "submit">Quote</button>
+        </div>
+        <div class = "mb-3">
+            {% if quote %}
+                <table class = "table table-stripped" style = "width: 50vw; margin: 0 auto;">
+                    <thead>
+                        <th scope = "col">Name</th>
+                        <th scope = "col">Symbol</th>
+                        <th scope = "col">Price</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{quote["name"]}}</td>
+                            <td>{{quote["symbol"]}}</td>
+                            <td>{{quote["price"]|usd}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            {% endif %}
+        </div>
+    </form>
+{% endblock %}

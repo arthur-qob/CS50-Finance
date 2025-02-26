@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Sell
+{% endblock %}
+
+{% block main %}
+    <h1>Sell</h1>
+    <form action = "/sell" method = "POST">
+        <div class = "mb-3">
+            <select class = "form-select" name = "symbol" style = "width: 15vw; margin: 0 auto;">
+                {% if not sbls %}
+                    <option selected>No symbols</option>
+                {% else %}
+                    <option selected>Symbol</option>
+                    {% for s in sbls %}
+                        <option value = "{{ s }}">{{ s }}</option>
+                    {% endfor %}
+                {% endif %}
+            </select>
+        </div>
+        <div class = "mb-3">
+            <input autocomplete = "off" autofocus class = "form-control mx-auto w-auto" name = "shares" placeholder = "Shares" type = "number">
+        </div>
+        <button class = "btn btn-primary" type = "submit">Sell</button>
+    </form>
+{% endblock %}

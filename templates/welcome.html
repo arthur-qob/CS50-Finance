@@ -1,0 +1,23 @@
+{% extends "layout.html" %} {% block title %} Welcome {% endblock %} {% block
+main %}
+<div class="container-fluid d-flex flex-column mx-auto"
+    style="position: relative; width: 80vw; aspect-ratio: 1/1; gap: 20%">
+    <h1 class="d-flex flex-column" style="width: 100%">
+        <span style="width: max-content; text-align: center" class="mx-auto">Welcome To</span>
+        <span class="d-flex flex-row justify-content-center align-items-center" style="gap: 20px">
+            <span class="d-flex">
+                <span style="font-size: min(10dvw, 4rem)" class="blue">C</span>
+                <span style="font-size: min(10dvw, 4rem)" class="red">$</span>
+                <span style="font-size: min(10dvw, 4rem)" class="yellow">5</span>
+                <span style="font-size: min(10dvw, 4rem)" class="green">0</span>
+            </span>
+            <span style="font-size: min(10dvw, 4rem)" class="red">Finance</span>
+        </span>
+    </h1>
+    <div class="d-flex flex-row justify-content-center align-items-center mx-auto"
+        style="width: min(50dvw, 500px); gap: 20px">
+        <a class="btn btn-primary" style="white-space: nowrap; width: 50%" href="/login">Login</a>
+        <a class="btn btn-outline-primary" style="white-space: nowrap; width: 50%" href="/register">Register</a>
+    </div>
+</div>
+{% endblock %}
